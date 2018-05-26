@@ -13,7 +13,7 @@ const styles={
         height:'100%'
     },
      subcontainer:{
-        marginRight:'20% '      
+        marginRight:'45% '      
        },
        text:{
            fontSize:12,

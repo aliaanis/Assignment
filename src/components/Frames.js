@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import injectSheet from 'react-jss';
 import { Link } from 'react-router-dom'
+import Typography from '@material-ui/core/Typography';
 
 
 const styles={
     frames:{
+        textDecoration:'none',
         display:"flex",
         flexDirection:"column",
         justifyContent:"center",
@@ -29,8 +31,12 @@ const styles={
     },
     price:{
         fontSize:10,
-        fontWeight:"bold",
-        position:'relative'
+        // fontWeight:"bold",
+        // position:'relative',
+        // textDecoration:'none'
+    },
+    link:{
+        textDecoration:"none"
     }
 }
 class Frames extends Component{
@@ -40,15 +46,15 @@ class Frames extends Component{
         const price=parseInt(this.props.item.salePrice,10);
         const classes=this.props.classes;
         return(
-            <Link to={`/item/${this.props.item.id}`}>
-            <div className={classes.frames} >
+            <Link className={classes.frames} to={`/item/${this.props.item.id}`}>
+                <div>
                 <img className={classes.pic} alt="pic" src={this.props.item.image}/>
+                </div>
                 <div className={classes.label}>
-                    <div className={classes.price} >{this.props.item.name}</div>
-                    <div className={classes.price}>{"\u20B9"}{price}</div>
+                    <p className={classes.price} variant="body1" >{this.props.item.name}</p>
+                    <Typography className={classes.price} variant="body1">{"\u20B9"}{price}</Typography>
                 </div>
 
-            </div> 
             </Link>
         );
     }
