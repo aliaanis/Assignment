@@ -10,21 +10,27 @@ const styles={
     colorList:{
         display:"flex"
     },
-    bulletBox:{
+    option:{
         height: 30,
-        // width:47,
         padding:'0px 10px',
         border: '1px solid transparent',
         display: 'flex',
-        // justifyContent: 'space-between',
         alignItems: 'center',
         borderRadius: 3,
         fontSize: 12,
         marginRight:10,
+    },
+    optionDefault:{
+        extend:'option',
         '&:hover':{
             backgroundColor:"#dadada",
             cursor:'pointer'
         }
+    },
+    optionSelected:{
+        extend:'option',
+        backgroundColor:"#dadada",
+        
     },
     unordered:{
         paddingLeft: 26,
@@ -36,18 +42,7 @@ const styles={
         fontSize:13,
         marginRight:10
     },
-    selected:{
-        backgroundColor:"#dadada",
-        height: 30,
-        padding:'0px 10px',
-        border: '1px solid transparent',
-        display: 'flex',
-        alignItems: 'center',
-        borderRadius: 3,
-        fontSize: 12,
-        marginRight:10,
-        
-    }
+    
     
 
             
@@ -69,7 +64,7 @@ const ColorSelect=observer(class ColorSelect extends Component{
                     { color.map((item)=>{
                         let col=Object.values(item);
                         return(
-                            <div key={Object.values(item)} className={classnames({[classes.selected]:colorFlag.includes(Object.keys(item)[0])},{[classes.bulletBox]:!colorFlag.includes(Object.keys(item)[0])})}   onClick={(e)=>{change(Object.keys(item)[0],type)}}>
+                            <div key={Object.values(item)} className={classnames({[classes.optionSelected]:colorFlag.includes(Object.keys(item)[0])},{[classes.optionDefault]:!colorFlag.includes(Object.keys(item)[0])})}   onClick={(e)=>{change(Object.keys(item)[0],type)}}>
                                 
                                 <Bullet className={classes.bullet} style={{fill:col,border:'1px solid black',borderRadius:50}}/>
                                 

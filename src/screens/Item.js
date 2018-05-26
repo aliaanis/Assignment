@@ -16,7 +16,9 @@ const styles={
         height:'100%',
         display:'flex',
         flexDirection:'column',
-        justifyContent:'space-between'
+        justifyContent:'space-between',
+        overflow:'hidden',
+        overflowY:'hidden',
     },
     nav:{
         height:'7%'

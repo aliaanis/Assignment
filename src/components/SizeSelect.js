@@ -9,39 +9,31 @@ const styles={
     sizeList:{
         display:"flex",
     },
-    bullet:{
+    option:{
         margin:2,
-        // backgroundColor:'#dadada',
-        backgroundColor:'#fff',
         color:'#666565',
         width: 30,
         border: '1px solid #dadada',
         height: 23,
         borderRadius: 3,
         fontSize:10,
+        cursor:"pointer",
         display:'flex',
         alignItems:'center',
         justifyContent:"center",
-        cursor:"pointer",
+    },
+
+    optionDefault:{
+        extend:'option',
+        backgroundColor:'#fff',
         '&:hover':{
             backgroundColor:"#d9d9d9"
         },
         
     },
-    selected:{
-        margin:2,
+    optionSelected:{
+        extend:'option',
         backgroundColor:'#d9d9d9',
-        color:'#666565',
-        width: 30,
-        border: '1px solid #dadada',
-        height: 23,
-        borderRadius: 3,
-        fontSize:10,
-        display:'flex',
-        alignItems:'center',
-        justifyContent:"center",
-        cursor:"pointer",
-        
         }
     
 };
@@ -59,7 +51,7 @@ const SizeSelect=observer(class SizeSelect extends Component{
                 <Typography>{size.length} Memory sizes available.</Typography>
                 <div className={classes.sizeList}>
                     {size.map((item)=>
-                        <div key={Object.values(item)} className={classnames({[classes.selected]:sizeFlag.includes(Object.keys(item)[0])},{[classes.bullet]:!sizeFlag.includes(Object.keys(item)[0])})} onClick={(e)=>{change(Object.keys(item)[0],type)}}>
+                        <div key={Object.values(item)} className={classnames({[classes.optionSelected]:sizeFlag.includes(Object.keys(item)[0])},{[classes.optionDefault]:!sizeFlag.includes(Object.keys(item)[0])})} onClick={(e)=>{change(Object.keys(item)[0],type)}}>
                           {Object.values(item)}
                         </div>
                     )}

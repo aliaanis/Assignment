@@ -22,6 +22,11 @@ const styles={
 
     },
     pic:{
+        backgroundPosition: "center center",
+        backgroundSize: "cover",
+        display: "inline-block",
+        width: '200px',
+        height: "auto",
         // display: "inline-block",
         // width: '100%',
         // height: "auto",

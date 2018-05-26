@@ -22,12 +22,7 @@ const Itemprimary=observer(class Itemprimary extends Component{
         this.count=this.count+1;
     }
     subtract=()=>{
-        if(this.count===0){
-            this.count=0;
-        }
-        else{
-            this.count=this.count-1;
-        }
+        this.count===0? this.count=0:this.count--;
         
     }
     constructor(props){

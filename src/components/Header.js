@@ -3,6 +3,7 @@ import injectSheet from 'react-jss';
 import { Link } from 'react-router-dom'
 
 const styles={
+  
   container:{
     display:'flex',
     boxShadow: '0px 0 8px #888888',
@@ -17,7 +18,12 @@ const styles={
     flex:1,
     justifyContent:'center',
     alignItems:"center",
-    textDecoration:"none"
+    textDecoration:"none",
+    color:'#000',
+    '&:hover':{
+      color:'#FF0033',
+      fontWeight:'bold'
+    }
   },
   headerRight:{
     display:"flex",
@@ -36,9 +42,13 @@ const styles={
   nav:{
     textDecoration:"none",
     color:"#000",
+    overflow:'auto',
     "&:hover":{
-      fontWeight:"bold",
+      color:'#FF0033',
+      fontWeight:'bold'
+
       
+
     }
   }
   
