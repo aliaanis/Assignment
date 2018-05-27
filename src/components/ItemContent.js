@@ -41,8 +41,29 @@ const Itemprimary=observer(class Itemprimary extends Component{
         console.log(this.current);
         
     }
+    switch=(array)=>{
+        let temp=array[0];
+        array[0]=array[1];
+        array[1]=temp;
+        return array;
+    }
     componentWillMount(){
-        // let id=this.id; 
+        let flag=0;
+        let options=this.response.options;
+       for(let i=0;i<options.length;i++){
+           if(this.current[0]===options[i]._id){
+               if(options[i].attrib_id!==this.response.attributes[0]._id){
+                   flag=1;
+               }
+           }
+           if(this.current[1]===options[i]._id){
+               if(options[i].attrib_id!==this.response.attributes[1]._id){
+                   flag=1;
+               }
+           }
+       }
+       flag?this.current=this.switch(this.current):null;
+       console.log(this.current);
         this.size=[];
         let dummy=this.response.primary_product;
         let obj={};
