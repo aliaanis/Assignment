@@ -10,35 +10,30 @@ const styles={
         flexDirection:"column",
         height:100
     },
-    plus:{
+    button:{
         cursor:'pointer',
         display:'flex',
         justifyContent:"center",
         alignItems:"center",
         border: '1px #2eada2 solid',
         backgroundColor: '#fff',
+        color:'#2eada2',
+        fontSize:17,
+        width:24
+    },
+    plus:{
+        extend:'button',
         borderBottomLeftRadius: '4px',
         borderTopLeftRadius: '4px',
-        color:'#2eada2',
-        fontSize:17,
-        width:24
-
     },
     minus:{
-        cursor:'pointer',
-
-        display:'flex',
-        justifyContent:"center",
-        alignItems:"center",
-        border: '1px #2eada2 solid',
-        backgroundColor: '#fff',
+        extend:'button',
         borderBottomRightRadius: '4px',
         borderTopRightRadius: '4px',
-        color:'#2eada2',
-        fontSize:17,
-        width:24
+        
     },
     counter:{
+        fontSize:14,
         width: '20px',
         height: '20px',
         border:' 1px solid #2eada2',

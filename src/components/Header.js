@@ -55,10 +55,16 @@ const styles={
 
 }
 class Header extends Component{
+  static contextTypes = {
+    router: () => true, 
+  }
   render(){
     const classes=this.props.classes;
     return(
       <div className={classes.container}>
+      {/* <div className={classes.headerLeft}>
+        <p  onClick={this.context.router.history.goBack}>MY AWESOME SHOP</p>
+      </div> */}
         <Link to="/" className={classes.headerLeft}>
            <p >MY AWESOME SHOP</p>
         </Link>

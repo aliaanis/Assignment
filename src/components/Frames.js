@@ -16,7 +16,7 @@ const styles={
         height:160,
         width:173,
         // border:'1px solid black',
-        margin:10,
+        margin:13,
         '&:hover':{
             webkitTransform:'scale(1:1)',
             msTransform: 'scale(1.1)',

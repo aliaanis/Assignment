@@ -3,6 +3,8 @@ import injectSheet from 'react-jss';
 import { observer } from 'mobx-react';
 import {extendObservable} from 'mobx';
 import Typography from '@material-ui/core/Typography';
+import NumberFormat from 'react-number-format';
+
 
 const styles={
     price:{
@@ -44,19 +46,26 @@ const Price=observer(class Price extends Component{
            
         }) 
     }
+    
+        
     render(){
         const primary=this.props.primary;
         const classes=this.props.classes;
         return(
             <div>
                 <div className={classes.price}>
-                    <Typography variant="body2" className={classes.salePrice}>{"\u20B9"}{'\u00A0'}{parseInt(primary.sale_price,10)}</Typography>
-                    <Typography variant="body2" className={classes.markPrice}>{"\u20B9"}{'\u00A0'}{parseInt(primary.mark_price,10)}/></Typography>
+                    <Typography variant="body2" className={classes.salePrice}>
+                        <NumberFormat value={parseInt(primary.sale_price,10)} prefix={"\u20B9"} displayType="text" thousandSeparator={true}/>
+                    </Typography>
+                    <Typography variant="body2" className={classes.markPrice}>
+                        <NumberFormat value={primary.mark_price} prefix={"\u20B9"} displayType="text" thousandSeparator={true}/>
+                    </Typography>
                 </div>
-                <Typography variant="body2" className={classes.discount} >You save {"\u20B9"}{'\u00A0'}{parseInt(primary.mark_price-primary.sale_price,10)} 
-                {'\u00A0'}({primary.sale_msg})
-                </Typography>
-                <Typography variant="body2" className={classes.msg}>Local taxes included(where applicable).</Typography>
+                    <Typography variant="body2" className={classes.discount} >You save {'\u00A0'}
+                        <NumberFormat value={parseInt(primary.mark_price-primary.sale_price)} prefix={"\u20B9"} displayType="text" thousandSeparator={true}/>
+                    {'\u00A0'}({primary.sale_msg})
+                    </Typography>
+                    <Typography variant="body2" className={classes.msg}>Local taxes included(where applicable).</Typography>
             </div>
         );
     }

@@ -51,6 +51,18 @@ const styles={
     footer:{
         height:"7%",
         width:'100%',
+    },
+    err:{
+        display:'flex',
+        alignItems:'center',
+        height:'10%',
+        fontSize:20,
+        backgroundColor:'#ff7272',
+        color:'#fff',
+        '& $p':{
+            marginLeft:'10%'
+        }
+
     }
 };
 
@@ -65,6 +77,7 @@ const Item=observer(class Item extends Component{
         .catch((err)=>{
             console.log(err);
             this.loaded=true;
+            this.err=err;
         })
 
     } 
@@ -80,18 +93,21 @@ const Item=observer(class Item extends Component{
             apiRes:{},
             loaded:false,
             id:this.props.match.params.id,
-            image:[]
+            image:[],
+            err:false
         })   
     }
     render(){
         const classes=this.props.classes;
         return(
             <div className={classes.container}>
-                { this.loaded?
+             {this.err?<div className={classes.err}><p>Oops! Something went wrong.</p></div>:
+
                     <div className={classes.container}>
                         <div className={classes.nav}>
                             <Header/>
                         </div>
+                        { this.loaded?
                         <div className={classes.screen}>
                             <div className={classes.primary}>
                                 <div className={classes.imagePart}>
@@ -101,14 +117,15 @@ const Item=observer(class Item extends Component{
                                     <ItemContent apiRes={this.apiRes} changeImage={this.changeImage}/>
                                 </div>
                             </div>
-                        </div > 
+                        </div > :
+                        <CircularProgress className={classes.loader}/>  
+                          }
+
                         <div className={classes.footer}>
                             <Foot/>
                         </div>
-                    </div>:
-                        <CircularProgress className={classes.loader}/>
-
-                }
+                    </div>
+             }
                 
             </div>
 
