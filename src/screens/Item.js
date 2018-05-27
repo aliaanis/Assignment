@@ -37,7 +37,6 @@ const styles={
     primary:{
         display:'flex',
         flexDirection:'row',
-        // border:'2px solid green', 
         margin:'2.5% 19%',
         height:'80%',
         flexWrap:'wrap',
@@ -73,7 +72,41 @@ const styles={
             marginLeft:'10%'
         }
 
+    },
+    '@media (min-width: 768px) and (max-width: 991px)': {
+        primary:{
+            margin:'2.5% 12%',
+        }
+    },
+    '@media (max-width: 767px)':{
+        primary:{
+            margin:'2% 8%'
+        },
+        detailPart:{
+            width:'250px'
+        }
+       
+    },
+    '@media (max-width: 600px)':{
+        primary:{
+            flexDirection:'column',
+            margin:'3% 0%',
+            height:'100%',
+        },
+        screen:{
+            margin:'10px 0px'
+        },
+        imagePart:{
+            marginBottom:15,
+            width:'100%'
+        },
+        detailPart:{
+            width:'100%'
+        },
+        
+        
     }
+
 };
 
 const Item=observer(class Item extends Component{

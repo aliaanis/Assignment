@@ -63,6 +63,11 @@ const styles={
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
+    },
+    '@media (max-width: 600px)':{
+        submit:{
+            alignSelf:"center"
+        }
     }
     
     

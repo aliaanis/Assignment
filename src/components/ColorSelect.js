@@ -45,6 +45,25 @@ const styles={
         fontSize:13,
         marginRight:10
     },
+    '@media (max-width: 767px)':{
+        optionDefault:{
+            padding:'0px 6px'
+        }
+    },
+    '@media (max-width: 767px)':{
+        optionSelected:{
+            padding:'0px 6px',
+            marginRight:'2px'
+        },
+        optionDefault:{
+            padding:'0px 6px',
+            marginRight:'2px'
+        },
+        bullet:{
+            marginRight:10
+        }
+    }
+
     
     
 

@@ -99,24 +99,24 @@ const styles={
       },
       '@media (min-width: 600px) and (max-width: 767px)': {
         content:{
-            width:'660px',
-            padding:0
+            width:'630px',
+            padding:0,
+            justifyContent:'space-evenly'
          },
          button:{
-             width:'12%'
+             width:'20%'
          }
  
        },
-    '@media (max-width:767px)':{
+    '@media (max-width:600px)':{
         content:{
-            // margin:'5%',
-            // width:'80%',
-            // border:'1px solid black',
-            padding:0,
-            justifyContent:'space-around'
+            width:'400px',
+            padding:'0 10%',
+            justifyContent:'space-evenly',
+
         },
         button:{
-            width:"22%"
+            width:"40%"
         }
 
     }

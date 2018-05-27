@@ -14,7 +14,19 @@ const styles={
     container:{
         paddingLeft:10,
     },
+    '@media (max-width: 767px)':{
+        container:{
+            width:'285px'
+        }
+        
+    },
+    '@media (max-width: 600px)':{
+        container:{
+            width:'100%'
+        }
+    }
     
+
 };
 
 const Itemprimary=observer(class Itemprimary extends Component{

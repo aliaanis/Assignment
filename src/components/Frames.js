@@ -66,13 +66,26 @@ const styles={
     '@media (max-width: 767px)': {
         frames:{
             width:'195px',
-            height:'177px'
+            height:'177px',
+            margin:8
         },
         price:{
             fontSize:12
         }
  
        },
+     '@media (max-width: 600px)': { 
+         price:{
+             fontSize:10
+         },
+         frames:{
+             width:'160px',
+             height:'160px'
+         },
+         pic:{
+             height:'109px'
+         }
+     }
        
     
 }

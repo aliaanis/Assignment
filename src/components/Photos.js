@@ -96,6 +96,26 @@ const styles={
         extend:'smallImg',
         border: '2px solid #000',
         
+    },
+    '@media (max-width: 767px)':{
+
+    },
+    '@media (max-width: 600px)':{
+        pic:{
+            height:'180px',
+            width:"auto"
+        },
+        main:{
+            height:'100%',
+            flexDirection:'column',
+            justifyContent:"space-between"
+        },
+        frame:{
+            border:'1px solid #cacaca',
+            width:'100%',
+            padding:'10px 0px'
+
+        }
     }
 
     
