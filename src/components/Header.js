@@ -70,10 +70,10 @@ class Header extends Component{
         </Link>
         <div className={classes.headerRight}>
           <ol className={classes.insideRight}>
-            <a className={classes.nav} href=""><li>HOME</li></a>
-            <a className={classes.nav} href=""><li>ABOUT</li></a>
-            <a className={classes.nav} href=""><li>CONTACT</li></a>
-            <a className={classes.nav} href=""><li>BAG</li></a>
+            <Link className={classes.nav} to="/"><li>HOME</li></Link>
+            <Link className={classes.nav} to="#"><li>ABOUT</li></Link>
+            <Link className={classes.nav} to="#"><li>CONTACT</li></Link>
+            <Link className={classes.nav} to="#"><li>BAG</li></Link>
           </ol>
         </div>
       </div>

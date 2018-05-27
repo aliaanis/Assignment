@@ -13,6 +13,7 @@ import Img from 'react-image'
 
 const styles={
     main:{
+        position:'relative',
         // border:'1px solid black',
         flexDirection:"column",
         display:'flex',
@@ -23,7 +24,6 @@ const styles={
 
     },
     picCover:{
-        position:"relative",
         height:'80%',
         // border:'1px solid black',
         display:'flex',
@@ -48,7 +48,7 @@ const styles={
         borderRadius:50,
         position: "absolute",
         display:'flex',
-        top: '50%',
+        top: '40%',
         bottom: 0,
         cursor:"pointer"
     },

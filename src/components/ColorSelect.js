@@ -73,12 +73,6 @@ const ColorSelect=observer(class ColorSelect extends Component{
                                 <p>{Object.values(item)}</p>    
                              </div>
 
-                            // <div key={Object.values(item)} className={classes.bulletBox}   onClick={(e)=>{change(Object.keys(item)[0],type)}}>
-                                
-                            //     <Bullet className={classes.bullet} style={{fill:col,border:'1px solid black',borderRadius:50}}/>
-                                
-                            //     <p>{Object.values(item)}</p>    
-                            //  </div>
                         );
                         })
                     }

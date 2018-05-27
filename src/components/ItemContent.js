@@ -38,6 +38,7 @@ const Itemprimary=observer(class Itemprimary extends Component{
 
             
         })    
+        console.log(this.current);
         
     }
     componentWillMount(){
@@ -80,20 +81,22 @@ const Itemprimary=observer(class Itemprimary extends Component{
 
     }   
     change=(val,type)=>{
+        console.log(this.current);
+        console.log(val,type);
+
         this.count=0;
         let x=this.response.product_variations;
         if(type==="color"){
             this.current[1]=val;
-            
+            console.log("color change called");
         }
         else if(type==="size"){
             this.current[0]=val;
-            
+            console.log("size change called");
+
 
         }
-        
-       
-
+        console.log(this.current);
         for(let i=0;i<x.length;i++){
            if((this.current.includes(x[i].sign[0])) && (this.current.includes(x[i].sign[1]))){
             this.primary.sale_price=x[i].sale_price;
@@ -106,10 +109,7 @@ const Itemprimary=observer(class Itemprimary extends Component{
          }
           
         }
-        // if(flag==0){
-        //     console.log("flag",flag);
-        //     window.alert("Sorry, this variation is not available");
-        // }
+       
           
 
     }
