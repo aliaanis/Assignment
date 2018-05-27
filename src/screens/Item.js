@@ -10,6 +10,7 @@ import {API_URL} from '../constant';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import classnames from 'classnames';
 import Foot from '../components/Foot';
+import { truncateSync } from 'fs';
 
 const styles={
     container:{
@@ -17,19 +18,22 @@ const styles={
         display:'flex',
         flexDirection:'column',
         justifyContent:'space-between',
-        overflow:'hidden',
-        overflowY:'hidden',
+        // overflow:'hidden',
+        // overflowY:'hidden',
+        
     },
+    
     nav:{
         height:'7%'
     },
     screen:{
-        height:'80%'
+        height:'100%',
+
     },
     primary:{
         display:'flex',
         flexDirection:'row',
-        border:'2px solid green', 
+        // border:'2px solid green', 
         margin:'2.5% 19%',
         height:'80%',
         flexWrap:'wrap',
@@ -37,6 +41,8 @@ const styles={
     },
     imagePart:{
         display:"flex",
+        flexDirection:'row',
+        alignItems:'center',
         flex:1
     },
     detailPart:{
@@ -67,12 +73,24 @@ const styles={
 };
 
 const Item=observer(class Item extends Component{
+    constructor(props){
+        super(props);
+        extendObservable(this,{
+
+            apiRes:{},
+            loaded:false,
+            id:this.props.match.params.id,
+            image:[],
+            err:false
+        })   
+    }
     componentWillMount(){
         let id=this.id;
         axios.get(API_URL.LISTINGS  + `/${id}`)
         .then((resp)=>{
         this.apiRes=resp.data;
-        this.loaded=true;            }
+        this.loaded=true;           
+         }
         )
         .catch((err)=>{
             console.log(err);
@@ -84,19 +102,9 @@ const Item=observer(class Item extends Component{
     changeImage=data=>{
         this.image=data;
     }
-
     
 
-    constructor(props){
-        super(props);
-        extendObservable(this,{
-            apiRes:{},
-            loaded:false,
-            id:this.props.match.params.id,
-            image:[],
-            err:false
-        })   
-    }
+    
     render(){
         const classes=this.props.classes;
         return(

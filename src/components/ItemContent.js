@@ -118,7 +118,7 @@ const Itemprimary=observer(class Itemprimary extends Component{
         return(
             <div className={classes.container}>
                
-                    <Description primary={this.primary} loaded={this.loaded}/>
+                    <Description primary={this.primary}  loaded={this.loaded}/>
                     <hr/>
                     <Price primary={this.primary}/>
                     <hr/>

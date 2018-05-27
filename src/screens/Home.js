@@ -18,17 +18,9 @@ const styles={
         display:'flex',
         flexDirection:'column',
         justifyContent:'space-between',
-        overflowX:'hidden'
-    },
-    containerBeforeHit:{
-        extend:'container',
+        overflowX:'hidden',
         overflow:'hidden',
         overflowY:'hidden',
-    },
-    containerAfterHit:{
-        extend:'container',
-        overflow:'scroll',
-        overflowY:'scroll',
     },
     nav:{
         height:'7%',
@@ -51,11 +43,12 @@ const styles={
    button:{
        width:'10%',
        backgroundColor:'#f9f9f9',
-       border:'1px solid transparent'
+       border:'1px solid transparent',
+       marginBottom:10
    },
    footer:{
        bottom:0,
-       height:"7%",
+       height:"40px",
        width:'100%',
    },
    loader: {
@@ -145,26 +138,29 @@ const Home=observer(class Home extends Component{
         return(
             <div>
                 {this.err?<div className={classes.err}><p>Oops! Something went wrong.</p></div>:
-            <div className={classnames({[classes.containerBeforeHit]:this.arr.length<=10},{[classes.containerAfterHit]:this.arr.length>10})}>
+            <div className={classes.container}>
                 <div className={classes.nav}>
                     <Header/>
                 </div>
                 {this.loaded?
-                    <div className={classes.center}>
-                        <div className={classes.content}>
-                            {this.arr.length>0 && this.arr.map(item=>
-                            <Frames key={item.id} item={item} />
-                            )
-                            }
-                        </div> 
-                       {this.arr.length%10==0? <Button variant="outlined" className={classes.button} onClick={this.nextPage}>
-                            Load More
-                        </Button>:null}
+                    <div>
+                        <div className={classes.center}>
+                            <div className={classes.content}>
+                                {this.arr.length>0 && this.arr.map(item=>
+                                <Frames key={item.id} item={item} />
+                                )
+                                }
+                            </div> 
+                        {this.arr.length%10==0? <Button variant="outlined" className={classes.button} onClick={this.nextPage}>
+                                Load More
+                            </Button>:null}
+                        </div>
+                        <div className={classes.footer}>
+                            <Foot/>
+                        </div>
                     </div>:<CircularProgress className={classes.loader}/>}
-                 {/* <div className={classes.footer}>
-                     <Foot/>
-                </div> */}
-            </div>}
+            </div>
+            }
             </div>
         );
 

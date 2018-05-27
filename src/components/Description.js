@@ -19,7 +19,7 @@ const Description=observer(class Description extends Component{
             <div>
                 
                         <Typography variant="body2">{primary.name}</Typography>
-                         <CollapseData str={primary.desc}/>
+                         <CollapseData str={primary.desc} />
                    
                  
             </div>

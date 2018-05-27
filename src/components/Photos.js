@@ -6,33 +6,38 @@ import {extendObservable} from 'mobx';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Next from '@material-ui/icons/KeyboardArrowLeft';
 import Back from '@material-ui/icons/KeyboardArrowRight';
+import classnames from 'classnames';
 
 
 import Img from 'react-image'
 
 const styles={
     main:{
-        border:'1px solid black',
+        // border:'1px solid black',
         flexDirection:"column",
         display:'flex',
-        width: '150%',
-        height: "100%",
-        position:"relative",
-        alignItems:"center"
+        width: '100%',
+        height: "90%",
+        alignItems:"center",
+        justifyContent:"space-between"
 
     },
+    picCover:{
+        position:"relative",
+        height:'80%',
+        // border:'1px solid black',
+        display:'flex',
+        alignItems:'center',
+        justifyContent:'center',
+    },
     pic:{
+        display: "inline-block",
+        width: '90%',
+        height: "250px",
+        margin: "5px",
         backgroundPosition: "center center",
         backgroundSize: "cover",
-        display: "inline-block",
-        width: '200px',
-        height: "auto",
-        // display: "inline-block",
-        // width: '100%',
-        // height: "auto",
-        margin: "5px",
-        // backgroundPosition: "center center",
-        // backgroundSize: "cover",
+       
     },
     arrowbuttons:{
         color:"#fff",
@@ -49,24 +54,48 @@ const styles={
     },
     back:{
         extend:'arrowbuttons',
-        left:'90%'
+        left:'90%',
+        '&:hover':{
+            opacity:1
+        }
     },
     
     next:{
         extend:'arrowbuttons',
-        left:'10%'
+        left:'0%',
+        '&:hover':{
+            opacity:1
+        }
     },
     frame:{
-        // border:'1px solid black',
         height:'50px',
-        width:'100%',
+        width:'90%',
         display:'flex',
-        justifyContent:"center"
+        justifyContent:"space-evenly",
+        paddingTop:2
 
     },
-    frameImg:{
+    smallImg:{
+
+        borderRadius: 4,
+        padding: 5,
         height:'auto',
-        width:"70px"
+        width:"70px",
+    },
+
+    frameImg:{
+        extend:'smallImg',
+        border: '1px solid #ddd',
+        '&:hover':{
+            webkitTransform:'scale(1:1)',
+            msTransform: 'scale(1.1)',
+            transform: 'scale(1.1)',
+        }
+    },
+    selectedImg:{
+        extend:'smallImg',
+        border: '2px solid #000',
+        
     }
 
     
@@ -91,7 +120,6 @@ const Photos=observer(class Photos extends Component{
         super(props);
         extendObservable(this,{
             response:this.props.apiRes,
-            image:this.props.image,
             pos:0
         })   
     }
@@ -101,6 +129,7 @@ const Photos=observer(class Photos extends Component{
         return(
             
                 <div className={classes.main}>
+                    <div className={classes.picCover}>
                     <Img className={classes.pic} src={this.props.image[this.pos]} loader={<CircularProgress/>}/>
                     <div onClick={this.changeBack} >
                         <Next className={classes.next} />
@@ -108,12 +137,14 @@ const Photos=observer(class Photos extends Component{
                     <div onClick={this.changeNext}>
                         <Back className={classes.back} />
                     </div>
+                    </div>
+                    
                     <div className={classes.frame}>
-                    {this.props.image.map((item,index)=>
-                    <img key={index} className={classes.frameImg} alt="mobile phones" src={item} onClick={(e)=>{this.changePic(item)}} />
-                    )
-
-                    }
+                        {this.props.image.map((item,index)=>
+                        <Img key={index} className={classnames({[classes.frameImg]:this.pos!==this.props.image.indexOf(item)},{[classes.selectedImg]:this.pos===this.props.image.indexOf(item)})}
+                         alt="mobile phones" src={item} onClick={(e)=>{this.changePic(item)}} />
+                        )
+                        }
                     </div>
                 </div>    
             

@@ -11,7 +11,7 @@ const styles={
         display:"flex",
         width:110,
         justifyprimary:"space-between",
-        height:50,
+        height:20,
         alignItems:"flex-end",
         margin:'0 !important'
      },
