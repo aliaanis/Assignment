@@ -46,11 +46,21 @@ const styles={
     "&:hover":{
       color:'#FF0033',
       fontWeight:'bold'
-
-      
-
     }
-  }
+  },
+  '@media (min-width: 992px) and (max-width: 1199px)': {
+    insideRight:{
+      width:"50%",
+      margin:0,
+    }
+  },
+  '@media (min-width: 768px) and (max-width: 991px)': {
+    insideRight:{
+      width:'52%',
+      marginRight:'147px'
+    }
+    
+   },
   
 
 }

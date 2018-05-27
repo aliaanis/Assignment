@@ -13,6 +13,7 @@ import Foot from '../components/Foot';
 
 
 const styles={
+    
     container:{
         height:'100%',
         display:'flex',
@@ -67,7 +68,46 @@ const styles={
             marginLeft:'10%'
         }
 
+    },
+    '@media (min-width: 1200px)': {
+        content:{
+            width:'800px',
+            padding:0,
+        },
+    },
+    '@media (min-width: 992px) and (max-width: 1199px)': {
+        content:{
+            width:'800px',
+            padding:0,
+        },
+        button:{
+            width:'12%'
+         }
+      },
+      '@media (min-width: 768px) and (max-width: 991px)': {
+       content:{
+           width:'600px',
+           padding:0
+        },
+        button:{
+            width:'12%'
+        }
+
+      },
+      '@media (min-width: 600px) and (max-width: 767px)': {
+        content:{
+            width:'660px',
+            padding:0
+         },
+         button:{
+             width:'12%'
+         }
+ 
+       },
+    '@media (max-width:600px)':{
+        
     }
+   
 }
 const Home=observer(class Home extends Component{
     constructor(){
@@ -151,7 +191,8 @@ const Home=observer(class Home extends Component{
                                 )
                                 }
                             </div> 
-                        {this.arr.length%10==0? <Button variant="outlined" className={classes.button} onClick={this.nextPage}>
+                        {this.arr.length%10==0? 
+                        <Button variant="outlined" className={classes.button} onClick={this.nextPage}>
                                 Load More
                             </Button>:null}
                         </div>

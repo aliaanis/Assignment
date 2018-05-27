@@ -21,9 +21,7 @@ const styles={
             webkitTransform:'scale(1:1)',
             msTransform: 'scale(1.1)',
             transform: 'scale(1.1)',
-
         }
-        
     },
     
     pic:{
@@ -43,12 +41,22 @@ const styles={
         fontSize:10,
         margin:0,
         color:'#000'
-    
     },
     frameCover:{
         display:'flex',
         justifyContent:'center'
-    }
+    },
+    '@media (min-width: 600px) and (max-width: 767px)': {
+        frames:{
+            width:'194px',
+            height:'180px'
+        },
+        price:{
+            fontSize:12
+        }
+ 
+       },
+       
     
 }
 
