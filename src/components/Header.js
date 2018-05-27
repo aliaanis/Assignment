@@ -22,11 +22,16 @@ const styles={
     justifyContent:'center',
     alignItems:"center",
     textDecoration:"none",
-    color:'#000',
-    '&:hover':{
-      color:'#FF0033',
-      fontWeight:'bold'
+
+    '& $aside':{
+      fontSize:16,
+      color:'#000',
+      '&:hover':{
+        color:'#FF0033',
+        fontWeight:'bold'
     }
+    }
+    
   },
   headerRight:{
     display:"flex",
@@ -56,7 +61,8 @@ const styles={
   },
   '@media (min-width: 992px) and (max-width: 1199px)': {
     insideRight:{
-      width:"50%",
+      width:"44%",
+      marginRight:"20%",
       margin:0,
     },
     mobileHeader:{

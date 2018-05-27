@@ -65,7 +65,7 @@ const styles={
       },
     '@media (max-width: 767px)': {
         frames:{
-            width:'192px',
+            width:'195px',
             height:'177px'
         },
         price:{

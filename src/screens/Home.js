@@ -77,11 +77,14 @@ const styles={
     },
     '@media (min-width: 992px) and (max-width: 1199px)': {
         content:{
-            width:'736px',
+            width:'767px',
             padding:0,
         },
         button:{
             width:'12%'
+         },
+         nav:{
+             height:'40px'
          }
       },
       '@media (min-width: 768px) and (max-width: 991px)': {
