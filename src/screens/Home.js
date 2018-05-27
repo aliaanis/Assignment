@@ -77,7 +77,7 @@ const styles={
     },
     '@media (min-width: 992px) and (max-width: 1199px)': {
         content:{
-            width:'800px',
+            width:'736px',
             padding:0,
         },
         button:{
@@ -86,11 +86,11 @@ const styles={
       },
       '@media (min-width: 768px) and (max-width: 991px)': {
        content:{
-           width:'600px',
+           width:'560px',
            padding:0
         },
         button:{
-            width:'12%'
+            width:'16%'
         }
 
       },
@@ -104,8 +104,18 @@ const styles={
          }
  
        },
-    '@media (max-width:600px)':{
-        
+    '@media (max-width:767px)':{
+        content:{
+            // margin:'5%',
+            // width:'80%',
+            // border:'1px solid black',
+            padding:0,
+            justifyContent:'space-around'
+        },
+        button:{
+            width:"22%"
+        }
+
     }
    
 }

@@ -46,10 +46,27 @@ const styles={
         display:'flex',
         justifyContent:'center'
     },
-    '@media (min-width: 600px) and (max-width: 767px)': {
+    '@media (min-width: 992px) and (max-width: 1199px)': {
+        pic:{
+            width:'84%',
+            height:'118px'
+        },
         frames:{
-            width:'194px',
-            height:'180px'
+            margin:'7px'
+        }
+      },
+      '@media (min-width: 768px) and (max-width: 991px)': {
+        frames:{
+            width:'160px'
+        },
+        pic:{
+            height:'110px'
+        }
+      },
+    '@media (max-width: 767px)': {
+        frames:{
+            width:'192px',
+            height:'177px'
         },
         price:{
             fontSize:12

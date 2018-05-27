@@ -18,7 +18,13 @@ const styles={
        text:{
            fontSize:12,
            color:'#fff'
+       },
+       '@media (max-width:767px)':{
+           subcontainer:{
+               margin:0
+           }
        }
+
 };
 
 class Foot extends Component{

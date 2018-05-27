@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import injectSheet from 'react-jss';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import MenuList from '../helpers/MenuList';
+import { Typography } from '@material-ui/core';
+
 
 const styles={
   
@@ -48,20 +51,60 @@ const styles={
       fontWeight:'bold'
     }
   },
+  mobileHeader:{
+    display:'none'
+  },
   '@media (min-width: 992px) and (max-width: 1199px)': {
     insideRight:{
       width:"50%",
       margin:0,
-    }
+    },
+    mobileHeader:{
+      display:'none'
+    },
   },
   '@media (min-width: 768px) and (max-width: 991px)': {
     insideRight:{
-      width:'52%',
-      marginRight:'147px'
-    }
-    
+      width:'62%',
+      marginRight:'80px',
+      fontSize:'16px'
+    },
+    insideLeft:{
+      fontSize:'16px'
+    },
+    mobileHeader:{
+      display:'none'
+    },
    },
-  
+   '@media (max-width:767px)':{
+        headerLeft:{
+          display:'none'
+        },
+        headerRight:{
+          display:'none'
+        },
+        mobileHeader:{
+          display:"flex",
+          flex:1,
+          justifyContent:'space-between',
+          padding:'0 2%',
+          alignItems:"center",
+          textDecoration:"none",
+          color:'#000',
+        },
+        mobileHeadline:{
+          '&:active':{
+            color:'#FF0033',
+           fontWeight:'bold'
+          },
+          '&:hover':{
+            cursor:'pointer'
+          }
+        },
+        container:{
+          boxShadow:'none',
+        },
+  }
 
 }
 class Header extends Component{
@@ -72,18 +115,19 @@ class Header extends Component{
     const classes=this.props.classes;
     return(
       <div className={classes.container}>
-      {/* <div className={classes.headerLeft}>
-        <p  onClick={this.context.router.history.goBack}>MY AWESOME SHOP</p>
-      </div> */}
+        <Link to="/" className={classes.mobileHeader}>
+          <Typography variant="body2" className={classes.mobileHeadline}> My Awesome Shop</Typography>
+         <MenuList/>
+         </Link>
         <Link to="/" className={classes.headerLeft}>
-           <p >MY AWESOME SHOP</p>
+           <Typography variant="body2">MY AWESOME SHOP</Typography>
         </Link>
         <div className={classes.headerRight}>
           <ol className={classes.insideRight}>
             <Link className={classes.nav} to="/"><li>HOME</li></Link>
             <Link className={classes.nav} to="#"><li>ABOUT</li></Link>
             <Link className={classes.nav} to="#"><li>CONTACT</li></Link>
-            <Link className={classes.nav} to="#"><li>BAG</li></Link>
+              <Link className={classes.nav} to="#"><li>BAG</li></Link>
           </ol>
         </div>
       </div>
