@@ -7,6 +7,9 @@ import Bullet from '@material-ui/icons/FiberManualRecord';
 import classnames from 'classnames';
 
 const styles={
+    container:{
+        marginTop:'5%'
+    },
     colorList:{
         display:"flex"
     },
@@ -56,10 +59,9 @@ const ColorSelect=observer(class ColorSelect extends Component{
         const color=this.props.color;
         let type="color";
         let colorFlag=this.props.colorFlag;
-        console.log("color flag",colorFlag);
         return(
-            <div >
-                <Typography>{color.length} color available.</Typography>
+            <div className={classes.container} >
+                <Typography variant="body1">{color.length} color available.</Typography>
                 <div className={classes.colorList}>
                     { color.map((item)=>{
                         let col=Object.values(item);

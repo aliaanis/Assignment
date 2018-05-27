@@ -7,6 +7,9 @@ import NumberFormat from 'react-number-format';
 
 
 const styles={
+    container:{
+        marginTop:'7%'
+    },
     price:{
         display:"flex",
         width:110,
@@ -52,7 +55,7 @@ const Price=observer(class Price extends Component{
         const primary=this.props.primary;
         const classes=this.props.classes;
         return(
-            <div>
+            <div className={classes.container}>
                 <div className={classes.price}>
                     <Typography variant="body2" className={classes.salePrice}>
                         <NumberFormat value={parseInt(primary.sale_price,10)} prefix={"\u20B9"} displayType="text" thousandSeparator={true}/>

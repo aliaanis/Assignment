@@ -33,7 +33,6 @@ class CollapseData extends Component{
         let desc=String(this.props.str);
         let pos=desc.indexOf(".");
         desc=desc.slice(0,pos+1);
-        console.log(pos,this.props.str.length);
         let detailPart=this.props.str.slice(pos+1,this.props.str.length);
         let msg=this.state.checked?"-LESS":"+MORE";
         const classes=this.props.classes;

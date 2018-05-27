@@ -113,6 +113,7 @@ const Photos=observer(class Photos extends Component{
     changePic=pic=>{
         let i=this.props.image.indexOf(pic);
         this.pos=i;
+
     }
     
     

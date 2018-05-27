@@ -12,7 +12,7 @@ import QuantityButton from './QuantityButton';
 
 const styles={
     container:{
-        paddingLeft:10
+        paddingLeft:10,
     },
     
 };
@@ -80,6 +80,7 @@ const Itemprimary=observer(class Itemprimary extends Component{
 
     }   
     change=(val,type)=>{
+        this.count=0;
         let x=this.response.product_variations;
         if(type==="color"){
             this.current[1]=val;

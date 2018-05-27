@@ -6,11 +6,14 @@ import Typography from '@material-ui/core/Typography';
 import classnames from 'classnames';
 
 const styles={
+    container:{
+        marginTop:'5%'
+    },
     sizeList:{
         display:"flex",
     },
     option:{
-        margin:2,
+        margin:4,
         color:'#666565',
         width: 30,
         border: '1px solid #dadada',
@@ -47,8 +50,8 @@ const SizeSelect=observer(class SizeSelect extends Component{
 
 
         return(
-            <div>
-                <Typography>{size.length} Memory sizes available.</Typography>
+            <div className={classes.container}>
+                <Typography variant="body1">{size.length} Memory sizes available.</Typography>
                 <div className={classes.sizeList}>
                     {size.map((item)=>
                         <div key={Object.values(item)} className={classnames({[classes.optionSelected]:sizeFlag.includes(Object.keys(item)[0])},{[classes.optionDefault]:!sizeFlag.includes(Object.keys(item)[0])})} onClick={(e)=>{change(Object.keys(item)[0],type)}}>

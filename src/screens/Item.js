@@ -18,8 +18,9 @@ const styles={
         display:'flex',
         flexDirection:'column',
         justifyContent:'space-between',
-        // overflow:'hidden',
-        // overflowY:'hidden',
+        overflow:'hidden'
+       
+       
         
     },
     
@@ -27,7 +28,10 @@ const styles={
         height:'7%'
     },
     screen:{
+        overflowY:'scroll',
+        overflowX:'hidden',
         height:'100%',
+        margin:'10px'
 
     },
     primary:{
