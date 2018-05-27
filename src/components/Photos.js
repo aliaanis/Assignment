@@ -113,7 +113,8 @@ const styles={
         frame:{
             border:'1px solid #cacaca',
             width:'100%',
-            padding:'10px 0px'
+            padding:'10px 0px',
+            justifyContent:'center'
 
         }
     }
