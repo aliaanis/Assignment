@@ -2,7 +2,7 @@ html{
   overflow:auto;
   min-height: 100%;
   min-width:100%;
-
+  box-sizing: border-box;
 }
 body {
     overflow:auto;
@@ -16,3 +16,10 @@ body {
  #root{
   
  }
+ 
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+    }

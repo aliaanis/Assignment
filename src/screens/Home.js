@@ -27,7 +27,13 @@ const styles={
         height:'7%',
         width:'100%'
     },
+    webkitScrollbar:{
+        display:'none'
+    },
     content:{
+        marginTop:'1%',
+        boxSizing:'content-box',
+         overflow:'overlay',
         padding:'0 20%',
         display:'flex',
         flexDirection:'row',
@@ -39,14 +45,17 @@ const styles={
        height:'calc(100% - 40px)',
        display:'flex',
        flexDirection:'column',
-       alignItems:'center'
+       alignItems:'center',
+       justifyContent:'space-between'
 
    },
    button:{
        width:'10%',
        backgroundColor:'#f9f9f9',
        border:'1px solid transparent',
-       marginBottom:10
+       marginBottom:10,
+       position:'absolute',
+       bottom:'7%'
    },
    footer:{
        bottom:0,
@@ -59,9 +68,9 @@ const styles={
         left: '50%',
     },
     err:{
+        height:'60px',
         display:'flex',
         alignItems:'center',
-        height:'50%',
         fontSize:20,
         backgroundColor:'#ff7272',
         color:'#fff',
@@ -88,7 +97,7 @@ const styles={
              height:'40px'
          }
       },
-      '@media (min-width: 768px) and (max-width: 991px)': {
+      '@media only screen and (max-width: 991px)': {
        content:{
            width:'560px',
            padding:0
@@ -98,7 +107,7 @@ const styles={
         }
 
       },
-      '@media (min-width: 600px) and (max-width: 767px)': {
+      '@media all    and (max-width: 767px)': {
         content:{
             width:'630px',
             padding:0,
@@ -109,7 +118,7 @@ const styles={
          }
  
        },
-    '@media (max-width:600px)':{
+    '@media screen and (max-width:600px)':{
         content:{
             width:'400px',
             padding:'0 10%',
@@ -204,9 +213,10 @@ const Home=observer(class Home extends Component{
                                 <Frames key={item.id} item={item} />
                                 )
                                 }
+                                
                             </div> 
                         {this.arr.length%10==0? 
-                        <Button variant="outlined" className={classes.button} onClick={this.nextPage}>
+                             <Button variant="outlined" className={classes.button} onClick={this.nextPage}>
                                 Load More
                             </Button>:null}
                         </div>

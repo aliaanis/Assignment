@@ -8,6 +8,7 @@ import NumberFormat from 'react-number-format';
 
 const styles={
     frames:{
+        boxSizing:'border-box',
         textDecoration:'none',
         display:"flex",
         flexDirection:"column",
@@ -55,7 +56,7 @@ const styles={
             margin:'7px'
         }
       },
-      '@media (min-width: 768px) and (max-width: 991px)': {
+      '@media(min-width:768px) and (max-width: 991px)': {
         frames:{
             width:'160px'
         },
@@ -63,10 +64,10 @@ const styles={
             height:'110px'
         }
       },
-    '@media (max-width: 767px)': {
+    '@media(min-width:600px) and (max-width:768px)': {
         frames:{
-            width:'195px',
-            height:'177px',
+            width:195,
+            height:177,
             margin:8
         },
         price:{
