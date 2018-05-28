@@ -43,7 +43,7 @@ const styles={
   insideRight:{
     display:"flex",
     listStyleType:"none",
-    width: '40%',
+    width: '45%',
     justifyContent: 'space-around',
     marginRight:129
   },

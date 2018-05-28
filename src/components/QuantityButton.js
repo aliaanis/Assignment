@@ -35,7 +35,7 @@ const styles={
     counter:{
         fontSize:14,
         width: '20px',
-        height: '20px',
+        height: '22px',
         border:' 1px solid #2eada2',
         backgroundColor: '#2eada2',
         color: '#fff',
