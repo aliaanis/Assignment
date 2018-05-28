@@ -1,7 +1,6 @@
 import React,{Component} from 'react';
 import injectSheet from 'react-jss';
 import { observer } from 'mobx-react';
-// import {extendObservable} from 'mobx';
 import { Typography } from '@material-ui/core';
 
 const styles={
@@ -69,8 +68,6 @@ const styles={
             alignSelf:"center"
         }
     }
-    
-    
 };
 const QuantityButton=observer(class QuantityButton extends Component{
     render(){

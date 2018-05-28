@@ -19,9 +19,6 @@ const styles={
         flexDirection:'column',
         justifyContent:'space-between',
         overflow:'hidden'
-       
-       
-        
     },
     
     nav:{
@@ -130,7 +127,6 @@ const Item=observer(class Item extends Component{
          }
         )
         .catch((err)=>{
-            console.log(err);
             this.loaded=true;
             this.err=err;
         })

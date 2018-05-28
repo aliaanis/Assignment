@@ -97,7 +97,7 @@ const styles={
              height:'40px'
          }
       },
-      '@media only screen and (max-width: 991px)': {
+      '@media (max-width: 991px)': {
        content:{
            width:'560px',
            padding:0
@@ -107,7 +107,7 @@ const styles={
         }
 
       },
-      '@media all    and (max-width: 767px)': {
+      '@media (max-width: 767px)': {
         content:{
             width:'630px',
             padding:0,
@@ -163,12 +163,10 @@ const Home=observer(class Home extends Component{
         })
         .catch((err)=>{
             this.err=err;
-            console.log("error",err);
 
         })
     }
     componentWillMount(){
-        console.log("componnetDID MOUNT");
         let dummy={};
         let obj={};
         
@@ -189,7 +187,6 @@ const Home=observer(class Home extends Component{
             
         })
         .catch((err)=>{
-            console.log("error",err);
             this.err=err;
             this.loaded=true;
         })

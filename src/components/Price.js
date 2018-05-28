@@ -21,7 +21,6 @@ const styles={
     markPrice:{
         textDecoration:"line-through",
         color:"grey",
-        // fontWeight:"bold",
         fontSize:12
     },
     salePrice:{
@@ -31,13 +30,11 @@ const styles={
     },
     discount:{
         color:"#6eb8af",
-        // fontWeight:"bold",
         fontSize:12,
         display:"flex"
     },
     msg:{
         color:"grey",
-        // fontWeight:"bold",
         fontSize:12
     }
 };
@@ -49,8 +46,6 @@ const Price=observer(class Price extends Component{
            
         }) 
     }
-    
-        
     render(){
         const primary=this.props.primary;
         const classes=this.props.classes;

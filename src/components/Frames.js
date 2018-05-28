@@ -16,7 +16,6 @@ const styles={
         alignItems:"center",
         height:160,
         width:173,
-        // border:'1px solid black',
         margin:13,
         '&:hover':{
             webkitTransform:'scale(1:1)',

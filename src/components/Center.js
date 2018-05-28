@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import injectSheet from 'react-jss';
 import Button from '@material-ui/core/Button';
-// import Frames from './Frames';
 import Frames from './Frames';
 import Typography from '@material-ui/core/Typography';
 const styles={
@@ -25,7 +24,6 @@ class Center extends Component{
     render(){
         const classes=this.props.classes;
         let arr=this.props.arr;
-        console.log(arr.length);
         return(
             <div className={classes.container}>
             <div className={classes.content}>

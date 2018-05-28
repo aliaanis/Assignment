@@ -1,21 +1,16 @@
 import React,{Component} from 'react';
 import injectSheet, { jss, ThemeProvider } from "react-jss";
-
 import { observer } from 'mobx-react';
 import {extendObservable} from 'mobx';
-// import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Next from '@material-ui/icons/KeyboardArrowLeft';
 import Back from '@material-ui/icons/KeyboardArrowRight';
 import classnames from 'classnames';
-
-
 import Img from 'react-image'
 
 const styles={
     main:{
         position:'relative',
-        // border:'1px solid black',
         flexDirection:"column",
         display:'flex',
         width: '100%',
@@ -26,7 +21,6 @@ const styles={
     },
     picCover:{
         height:'80%',
-        // border:'1px solid black',
         display:'flex',
         alignItems:'center',
         justifyContent:'center',
@@ -137,8 +131,6 @@ const Photos=observer(class Photos extends Component{
         this.pos=i;
 
     }
-    
-    
     constructor(props){
         super(props);
         extendObservable(this,{

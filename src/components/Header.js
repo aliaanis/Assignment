@@ -99,18 +99,18 @@ const styles={
           color:'#000',
         },
         mobileHeadline:{
-          '&:active':{
-            color:'#FF0033',
-           fontWeight:'bold'
-          },
-          '&:hover':{
-            cursor:'pointer'
-          }
-        },
+           '&:active':{
+              color:'#FF0033',
+              fontWeight:'bold'
+             },
+           '&:hover':{
+              cursor:'pointer'
+             }
+           },
         container:{
-          boxShadow:'none',
-        },
-  }
+            boxShadow:'none',
+          },
+      }
 
 }
 class Header extends Component{

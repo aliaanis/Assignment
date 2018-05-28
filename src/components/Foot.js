@@ -4,7 +4,6 @@ import Typography from '@material-ui/core/Typography';
 
 const styles={
     container:{
-        // position:'static',
         backgroundColor:'#000',
         display:'flex',
         justifyContent:'center',

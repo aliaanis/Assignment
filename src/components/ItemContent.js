@@ -2,13 +2,11 @@ import React, { Component } from 'react';
 import injectSheet from 'react-jss';
 import { observer } from 'mobx-react';
 import {extendObservable} from 'mobx';
-// import Typography from '@material-ui/core/Typography';
-import Description from './Description';
 import ColorSelect  from './ColorSelect';
 import Price from './Price';
 import SizeSelect from './SizeSelect';
 import QuantityButton from './QuantityButton';
-// import Snackbar from '@material-ui/core/Snackbar';
+import Description from './Description';
 
 const styles={
     container:{
@@ -46,11 +44,7 @@ const Itemprimary=observer(class Itemprimary extends Component{
             size:"",
             count:0,
             current:this.props.apiRes.selected_option_ids,
-            
-
-            
         })    
-        console.log(this.current);
         
     }
     switch=(array)=>{
@@ -75,7 +69,6 @@ const Itemprimary=observer(class Itemprimary extends Component{
            }
        }
        flag?this.current=this.switch(this.current):null;
-       console.log(this.current);
         this.size=[];
         let dummy=this.response.primary_product;
         let obj={};
@@ -90,13 +83,9 @@ const Itemprimary=observer(class Itemprimary extends Component{
                     this.primary.sign=item.sign;
                     this.primary.image=item.images;    
                     this.props.changeImage(this.primary.image);
-                    
-
                 }
                 
             })
-            
-            
             let colorId=this.response.attributes[1]._id;
             let sizeId=this.response.attributes[0]._id;
             this.response.options.map((item)=>{
@@ -114,22 +103,14 @@ const Itemprimary=observer(class Itemprimary extends Component{
 
     }   
     change=(val,type)=>{
-        console.log(this.current);
-        console.log(val,type);
-
         this.count=0;
         let x=this.response.product_variations;
         if(type==="color"){
             this.current[1]=val;
-            console.log("color change called");
         }
         else if(type==="size"){
             this.current[0]=val;
-            console.log("size change called");
-
-
         }
-        console.log(this.current);
         for(let i=0;i<x.length;i++){
            if((this.current.includes(x[i].sign[0])) && (this.current.includes(x[i].sign[1]))){
             this.primary.sale_price=x[i].sale_price;
@@ -142,9 +123,6 @@ const Itemprimary=observer(class Itemprimary extends Component{
          }
           
         }
-       
-          
-
     }
    
     render(){
@@ -160,10 +138,7 @@ const Itemprimary=observer(class Itemprimary extends Component{
                     <SizeSelect size={this.size} change={this.change} sizeFlag={this.current}/>
                     <QuantityButton count={this.count} add={this.add}
                     subtract={this.subtract}/>
-                   
             </div>
-        
-            
         );
     }
 })

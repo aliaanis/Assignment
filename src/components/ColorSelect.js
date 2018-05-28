@@ -1,7 +1,6 @@
 import React,{Component} from 'react';
 import injectSheet from 'react-jss';
 import { observer } from 'mobx-react';
-// import {extendObservable} from 'mobx';
 import Typography from '@material-ui/core/Typography';
 import Bullet from '@material-ui/icons/FiberManualRecord';
 import classnames from 'classnames';
