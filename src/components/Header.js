@@ -61,7 +61,7 @@ const styles={
   },
   '@media (min-width: 992px) and (max-width: 1199px)': {
     insideRight:{
-      width:"44%",
+      width:"50%",
       marginRight:"20%",
       margin:0,
     },
