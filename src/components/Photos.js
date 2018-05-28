@@ -57,7 +57,7 @@ const styles={
     
     next:{
         extend:'arrowbuttons',
-        left:'4%',
+        left:'4aliaa%',
         '&:hover':{
             opacity:1
         }
