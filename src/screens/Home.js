@@ -34,8 +34,9 @@ const styles={
         flexWrap:'wrap',
     },
    center:{
+       overflow:'auto',
        width:'100%',
-       height:'85%',
+       height:'calc(100% - 40px)',
        display:'flex',
        flexDirection:'column',
        alignItems:'center'
@@ -189,14 +190,14 @@ const Home=observer(class Home extends Component{
     render(){
         const classes=this.props.classes;
         return(
-            <div>
+            <div className={classes.container}>
                 {this.err?<div className={classes.err}><p>Oops! Something went wrong.</p></div>:
             <div className={classes.container}>
                 <div className={classes.nav}>
                     <Header/>
                 </div>
-                {this.loaded?
-                    <div>
+                
+                    {this.loaded?
                         <div className={classes.center}>
                             <div className={classes.content}>
                                 {this.arr.length>0 && this.arr.map(item=>
@@ -209,10 +210,10 @@ const Home=observer(class Home extends Component{
                                 Load More
                             </Button>:null}
                         </div>
-                        <div className={classes.footer}>
-                            <Foot/>
-                        </div>
-                    </div>:<CircularProgress className={classes.loader}/>}
+                        :<CircularProgress className={classes.loader}/>}
+                    <div className={classes.footer}>
+                        <Foot/>
+                    </div>
             </div>
             }
             </div>

@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
-import injectSheet from 'react-jss';
+import injectSheet, { jss, ThemeProvider } from "react-jss";
+
 import { observer } from 'mobx-react';
 import {extendObservable} from 'mobx';
 // import Typography from '@material-ui/core/Typography';
@@ -120,7 +121,7 @@ const styles={
     }
 
     
-};
+}
 const Photos=observer(class Photos extends Component{
     changeNext=()=>{
         if(this.pos<this.props.image.length-1)

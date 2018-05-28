@@ -12,8 +12,8 @@ class App extends Component{
     render(){
         const classes=this.props.classes;
         return(
-            <Router >
-                <div className={classes.router}>
+            <Router  className={classes.router} >
+                <div className={classes.router} >
                     <Route exact path="/" component={Home}/>
                     <Route path="/item/:id" component={Item} />
                 </div>
